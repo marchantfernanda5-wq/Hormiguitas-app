@@ -1,0 +1,17 @@
+@use "../abstracts/variables" as v;
+
+// Mantiene Bootstrap, solo “tinte” Hormiguita en el CTA principal
+.modal-miguita__boton--principal {
+  background: v.$color-menta;
+  border-color: v.$color-menta;
+  color: #fff;
+
+  &:hover {
+    filter: brightness(0.95);
+  }
+
+  &:focus {
+    outline: 3px solid v.$color-menta-claro;
+    outline-offset: 2px;
+  }
+}

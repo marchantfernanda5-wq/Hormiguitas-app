@@ -1,0 +1,15 @@
+@use "../abstracts/variables" as v;
+
+body {
+  background: v.$color-fondo;
+  color: v.$color-texto;
+}
+
+.contenedor-app {
+  max-width: v.$ancho-max;
+}
+
+// Espacio extra abajo para que el botón flotante no tape contenido
+.dashboard {
+  padding-bottom: 4rem;
+}

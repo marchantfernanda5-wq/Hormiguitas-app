@@ -1,0 +1,10 @@
+@use "../abstracts/variables" as v;
+
+// Ajuste suave del componente Bootstrap (alert) para que se sienta “Hormiguita”
+.lista-miguitas__estado {
+  border-radius: v.$radio;
+}
+
+.lista-miguitas__mensaje {
+  margin-bottom: v.$espacio-1;
+}

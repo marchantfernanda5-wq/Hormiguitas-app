@@ -1,0 +1,7 @@
+@use "variables" as v;
+
+@mixin tarjeta($fondo, $color-texto: #2F2F2F) {
+  background: $fondo;
+  color: $color-texto;
+  border-radius: v.$radio;
+}

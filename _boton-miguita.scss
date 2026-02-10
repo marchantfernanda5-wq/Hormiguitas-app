@@ -1,0 +1,28 @@
+@use "../abstracts/variables" as v;
+
+.boton-miguita {
+  position: fixed;
+  right: v.$espacio-4;
+  bottom: v.$espacio-4;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: 0;
+  background: v.$color-menta;
+  color: v.$color-cafe;
+  font-size: 28px;
+  box-shadow: v.$sombra-suave;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  &:focus {
+    outline: 3px solid v.$color-menta-claro;
+    outline-offset: 3px;
+  }
+
+  &:active {
+    transform: scale(.98);
+  }
+}

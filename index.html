@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hormiguita • Control de gastos hormiga</title>
+
+  <!-- Bootstrap 4 (CDN) -->
+  <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.6.2/css/bootstrap.min.css"
+    crossorigin="anonymous"
+  />
+
+  <!-- Tu CSS compilado desde SASS -->
+  <link rel="stylesheet" href="css/main.css" />
+</head>
+
+<body>
+  <!-- =========================
+       BLOQUE: encabezado
+       ========================= -->
+  <header class="encabezado container contenedor-app py-3">
+    <nav class="navegacion navbar navbar-expand-lg navbar-light bg-white rounded shadow-sm">
+      <a class="navegacion__marca navbar-brand font-weight-bold" href="#" aria-label="Inicio Hormiguita">
+        <span class="navegacion__icono marca-hormiguita">🐜</span> Hormiguita
+      </a>
+
+      <button class="navegacion__boton navbar-toggler" type="button" data-toggle="collapse" data-target="#menuNavegacion"
+        aria-controls="menuNavegacion" aria-expanded="false" aria-label="Abrir menú">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="navegacion__menu collapse navbar-collapse" id="menuNavegacion">
+        <ul class="navegacion__lista navbar-nav ml-auto">
+          <li class="navegacion__item nav-item"><a class="navegacion__link nav-link" href="#seccionDashboard">Dashboard</a></li>
+          <li class="navegacion__item nav-item"><a class="navegacion__link nav-link" href="#seccionHistorial">Historial</a></li>
+          <li class="navegacion__item nav-item"><a class="navegacion__link nav-link" href="#seccionAyuda">Ayuda</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- =========================
+       BLOQUE: dashboard
+       ========================= -->
+  <main class="dashboard container contenedor-app pb-5" id="seccionDashboard">
+    <div class="dashboard__layout layout-escritorio">
+
+      <!-- =========================
+           BLOQUE: barra-lateral (solo escritorio)
+           ========================= -->
+      <aside class="barra-lateral d-none d-lg-block">
+        <div class="barra-lateral__panel bg-white rounded shadow-sm p-3 h-100">
+          <h2 class="barra-lateral__titulo h5 mb-3 marca-hormiguita">Tu hormiguero</h2>
+
+          <div class="barra-lateral__menu list-group">
+            <a href="#seccionDashboard" class="barra-lateral__link list-group-item list-group-item-action active">Resumen</a>
+            <a href="#seccionHistorial" class="barra-lateral__link list-group-item list-group-item-action">Gastos</a>
+            <a href="#seccionCategorias" class="barra-lateral__link list-group-item list-group-item-action">Categorías</a>
+            <a href="#seccionAjustes" class="barra-lateral__link list-group-item list-group-item-action">Ajustes</a>
+          </div>
+
+          <hr />
+          <p class="barra-lateral__tip small mb-0">
+            “Me lo merezco”… “para eso trabajo”.<br />
+            Regístralo igual 🐜
+          </p>
+        </div>
+      </aside>
+
+      <!-- =========================
+           SECCIÓN: contenido dashboard
+           ========================= -->
+      <section class="dashboard__contenido">
+        <!-- =========================
+             BLOQUE: resumen
+             ========================= -->
+        <section class="resumen" aria-labelledby="tituloResumen">
+          <h1 class="resumen__titulo h4 mb-3" id="tituloResumen">Resumen</h1>
+
+          <div class="resumen__fila row">
+            <!-- Priorizamos el gasto diario (acción principal) -->
+            <div class="resumen__columna col-12 col-md-7 mb-3">
+              <article class="tarjeta-resumen tarjeta-resumen--principal card shadow-sm">
+                <div class="tarjeta-resumen__cuerpo card-body">
+                  <p class="tarjeta-resumen__etiqueta mb-1">Hoy gasté</p>
+                  <p class="tarjeta-resumen__monto display-4 mb-0 font-weight-bold" aria-label="Total gastado hoy">$0</p>
+                  <p class="tarjeta-resumen__ayuda mb-0 small">Empieza registrando tu primera miguita 🐜</p>
+                </div>
+              </article>
+            </div>
+
+            <div class="resumen__columna col-12 col-md-5 mb-3">
+              <article class="tarjeta-resumen tarjeta-resumen--secundaria card shadow-sm">
+                <div class="tarjeta-resumen__cuerpo card-body">
+                  <p class="tarjeta-resumen__etiqueta mb-1">Este mes</p>
+                  <p class="tarjeta-resumen__monto tarjeta-resumen__monto--mes h2 mb-0 font-weight-bold" aria-label="Total gastado este mes">$0</p>
+                  <p class="tarjeta-resumen__ayuda mb-0 small text-muted">Cuando sumes miguitas, aquí verás el acumulado.</p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <!-- =========================
+             BLOQUE: lista-miguitas (estado vacío)
+             ========================= -->
+        <section class="lista-miguitas mt-2" aria-labelledby="tituloMiguitasHoy">
+          <h2 class="lista-miguitas__titulo h5 mb-3" id="tituloMiguitasHoy">Tus miguitas de hoy</h2>
+
+          <div class="lista-miguitas__estado alert alert-light border shadow-sm" role="status" aria-live="polite">
+            <p class="lista-miguitas__mensaje mb-1 font-weight-bold">Aún no hay miguitas hoy 🐜</p>
+            <p class="lista-miguitas__detalle mb-0 text-muted">Toca la miguita para registrar tu primer gasto.</p>
+          </div>
+        </section>
+
+        <!-- =========================
+             BLOQUE: historial
+             ========================= -->
+        <section class="historial mt-4" id="seccionHistorial" aria-labelledby="tituloHistorial">
+          <h2 class="historial__titulo h5 mb-3" id="tituloHistorial">Historial</h2>
+
+          <div class="historial__panel bg-white rounded shadow-sm p-3">
+            <p class="historial__nota mb-2 text-muted small">
+              Aquí aparecerán tus gastos registrados (tabla en escritorio / lista en móvil).
+            </p>
+
+            <div class="historial__tabla table-responsive">
+              <table class="table table-sm mb-0">
+                <thead>
+                  <tr>
+                    <th>Fecha</th>
+                    <th>Categoría</th>
+                    <th>Nota</th>
+                    <th class="text-right">Monto</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td colspan="4" class="text-center text-muted">Sin registros todavía.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- =========================
+             BLOQUE: ayuda
+             ========================= -->
+        <section class="ayuda mt-4" id="seccionAyuda" aria-labelledby="tituloAyuda">
+          <h2 class="ayuda__titulo h5 mb-3" id="tituloAyuda">Ayuda</h2>
+          <div class="ayuda__panel bg-white rounded shadow-sm p-3">
+            <p class="ayuda__texto mb-0">
+              Hormiguita te ayuda a registrar tus gastos favoritos.
+            </p>
+          </div>
+        </section>
+      </section>
+    </div>
+  </main>
+
+  <!-- Acción principal: abrir modal para registrar sin cambiar de pantalla -->
+  <button
+    type="button"
+    class="boton-miguita"
+    data-toggle="modal"
+    data-target="#modalRegistrarMiguita"
+    aria-label="Registrar miguita (agregar gasto)"
+    title="Registrar miguita"
+  >
+    🐜
+  </button>
+
+  <!-- =========================
+       BLOQUE: modal-miguita
+       ========================= -->
+  <div class="modal-miguita modal fade" id="modalRegistrarMiguita" tabindex="-1" role="dialog"
+    aria-labelledby="tituloModalRegistrar" aria-hidden="true">
+    <div class="modal-miguita__dialog modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-miguita__contenido modal-content rounded">
+
+        <div class="modal-miguita__encabezado modal-header">
+          <h3 class="modal-miguita__titulo modal-title h5" id="tituloModalRegistrar">Registrar miguita 🐜</h3>
+          <button type="button" class="modal-miguita__cerrar close" data-dismiss="modal" aria-label="Cerrar">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
+        <div class="modal-miguita__cuerpo modal-body">
+          <form class="modal-miguita__formulario">
+            <div class="modal-miguita__campo form-group">
+              <label class="modal-miguita__label" for="campoMonto">Monto</label>
+              <input type="number" class="modal-miguita__input form-control" id="campoMonto" placeholder="Ej: 1500" min="0" />
+              <small class="modal-miguita__hint form-text text-muted">Ingresa el valor del gasto.</small>
+            </div>
+
+            <div class="modal-miguita__campo form-group">
+              <label class="modal-miguita__label" for="campoCategoria">Categoría</label>
+              <select class="modal-miguita__select form-control" id="campoCategoria">
+                <option value="" selected>Selecciona una categoría</option>
+                <option>Café / snacks</option>
+                <option>Delivery</option>
+                <option>Transporte</option>
+                <option>Minimarket</option>
+                <option>Suscripciones</option>
+                <option>Antojos</option>
+                <option>Otros</option>
+              </select>
+            </div>
+
+            <div class="modal-miguita__campo form-group">
+              <label class="modal-miguita__label" for="campoNota">Nota (opcional)</label>
+              <input type="text" class="modal-miguita__input form-control" id="campoNota" placeholder="Ej: cafecito en la esquina" />
+            </div>
+
+            <div class="modal-miguita__campo form-group">
+              <label class="modal-miguita__label" for="campoFecha">Fecha</label>
+              <input type="date" class="modal-miguita__input form-control" id="campoFecha" />
+            </div>
+          </form>
+        </div>
+
+        <div class="modal-miguita__pie modal-footer">
+          <button type="button" class="modal-miguita__boton btn btn-outline-secondary" data-dismiss="modal">Cancelar</button>
+          <button type="button" class="modal-miguita__boton btn btn-success" modal-miguita__boton--principal">Agregar miguita</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================
+       BLOQUE: pie
+       ========================= -->
+  <footer class="pie container contenedor-app pb-4">
+    <p class="pie__texto text-center text-muted small mb-0">
+      © <span class="pie__anio" id="textoAnioActual">2026</span> Hormiguita • De miguita en miguita.
+    </p>
+  </footer>
+
+  <!-- JS Bootstrap 4 -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+
+  <!-- Detalle: año automático -->
+  <script>
+    function actualizarAnioActual() {
+      const etiquetaAnio = document.getElementById("textoAnioActual");
+      etiquetaAnio.textContent = new Date().getFullYear();
+    }
+    actualizarAnioActual();
+  </script>
+</body>
+</html>

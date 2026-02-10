@@ -1,0 +1,46 @@
+/* main.css (generado desde SASS - versión incluida para entrega) */
+
+*,*::before,*::after{box-sizing:border-box;}
+body{margin:0;background:#F5F6F8;color:#2F2F2F;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;line-height:1.4;}
+img{max-width:100%;height:auto;}
+
+.contenedor-app{max-width:1100px;}
+.dashboard{padding-bottom:4rem;}
+
+.marca-hormiguita{color:#6B4F3A;}
+.barra-lateral__panel{border-radius:.75rem;}
+.barra-lateral__tip{line-height:1.35;}
+
+.tarjeta-resumen{border:0;border-radius:.75rem;}
+.tarjeta-resumen__etiqueta{margin-bottom:.25rem;opacity:.95;}
+.tarjeta-resumen__ayuda{margin-top:.5rem;opacity:.9;}
+.tarjeta-resumen--principal{background:#7ED6C1;color:#fff;border-radius:.75rem;}
+.tarjeta-resumen--principal .tarjeta-resumen__monto{letter-spacing:-.02em;}
+.tarjeta-resumen--secundaria{background:#fff;color:#2F2F2F;border-radius:.75rem;border:1px solid #E8F7F4;}
+.tarjeta-resumen--secundaria .tarjeta-resumen__monto{letter-spacing:-.01em;}
+
+.boton-miguita{
+  position:fixed;right:1rem;bottom:1rem;width:64px;height:64px;border-radius:50%;
+  border:0;background:#7ED6C1;color:#6B4F3A;font-size:28px;box-shadow:0 10px 20px rgba(0,0,0,.15);
+  display:flex;align-items:center;justify-content:center;cursor:pointer;
+}
+.boton-miguita:focus{outline:3px solid #E8F7F4;outline-offset:3px;}
+.boton-miguita:active{transform:scale(.98);}
+
+/* Bootstrap alert “tint” */
+.lista-miguitas__estado{border-radius:.75rem;}
+.lista-miguitas__mensaje{margin-bottom:.25rem;}
+
+/* CTA modal tintado */
+.modal-miguita__boton--principal{
+  background:#7ED6C1;border-color:#7ED6C1;color:#fff;
+}
+.modal-miguita__boton--principal:hover{filter:brightness(.95);}
+.modal-miguita__boton--principal:focus{outline:3px solid #E8F7F4;outline-offset:2px;}
+
+/* Responsive layout */
+.layout-escritorio{display:block;}
+@media (min-width:992px){
+  .layout-escritorio{display:grid;grid-template-columns:260px 1fr;gap:1rem;align-items:start;}
+  .barra-lateral{position:sticky;top:1rem;height:calc(100vh - (1rem * 2));}
+}

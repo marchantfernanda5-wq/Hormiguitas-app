@@ -1,0 +1,22 @@
+@use "../abstracts/variables" as v;
+
+// Mobile-first: 1 columna (apilado)
+.layout-escritorio {
+  display: block;
+}
+
+// Escritorio: 2 columnas (sidebar + contenido)
+@media (min-width: v.$bp-lg) {
+  .layout-escritorio {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: v.$espacio-4;
+    align-items: start;
+  }
+
+  .barra-lateral {
+    position: sticky;
+    top: v.$espacio-4;
+    height: calc(100vh - (v.$espacio-4 * 2));
+  }
+}

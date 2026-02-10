@@ -1,0 +1,13 @@
+@use "../abstracts/variables" as v;
+
+.marca-hormiguita {
+  color: v.$color-cafe;
+}
+
+.barra-lateral__panel {
+  border-radius: v.$radio;
+}
+
+.barra-lateral__tip {
+  line-height: 1.35;
+}

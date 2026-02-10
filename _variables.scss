@@ -1,0 +1,30 @@
+// Marca (menta / café)
+$color-menta: #7ED6C1;
+$color-menta-claro: #E8F7F4;
+$color-cafe: #6B4F3A;
+
+// Neutros
+$color-blanco: #FFFFFF;
+$color-fondo: #F5F6F8;
+$color-texto: #2F2F2F;
+$borde-suave: #D9DDE3;
+
+// UI
+$sombra-suave: 0 10px 20px rgba(0, 0, 0, 0.15);
+$radio: 0.75rem;
+
+// Escala de espacios (8px baseline)
+$espacio-1: 0.25rem; // 4px
+$espacio-2: 0.5rem;  // 8px
+$espacio-3: 0.75rem; // 12px
+$espacio-4: 1rem;    // 16px
+$espacio-5: 1.5rem;  // 24px
+$espacio-6: 2rem;    // 32px
+
+// Breakpoints (mobile-first)
+$bp-md: 768px;
+$bp-lg: 992px;
+$bp-xl: 1200px;
+
+// Tamaños
+$ancho-max: 1100px;
